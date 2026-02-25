@@ -13,31 +13,22 @@ const App = () => {
     { id: 4, name: "Toyota Corolla", year: 2015, price: 10000 },
   ];
 
+  const showCars= (cars)=>{
+    return cars.map((car) => (
+          <Vehicle key={car.id} name={car.name} year={car.year} price={car.price}/>
+  ))};
+
   return (
     <div className="car-list">
      <div className="old-cars">
         <h2>Used</h2>
-        {usedCars.map((car) => (
-          <Vehicle
-            key={car.id}
-            name={car.name}
-            year={car.year}
-            price={car.price}
-          />
-        ))}
+        {showCars(usedCars)}
       </div>
     
 
       <div className="new-cars">
         <h2>New</h2>
-        {newCars.map((car) => (
-          <Vehicle
-            key={car.id}
-            name={car.name}
-            year={car.year}
-            price={car.price}
-          />
-        ))}
+        {showCars(newCars)}
       </div>
     </div>
   );

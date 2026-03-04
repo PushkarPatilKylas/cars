@@ -1,0 +1,37 @@
+.car-list {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.875rem;
+  padding: 1.25rem;
+}
+
+.old-cars,
+.new-cars {
+  width: 48%;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 0.625rem;
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.08);
+}
+
+.old-cars h2,
+.new-cars h2 {
+  text-align: center;
+  margin-bottom: 0.75rem;
+  color: #333;
+}
+
+/* Optional: styling for each Vehicle card */
+.vehicle-card {
+  background-color: #ffffff;
+  padding: 0.75rem;
+  margin-bottom: 0.625rem;
+  border-radius: 0.5rem;
+  border-left: 0.3125rem solid #4caf50;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.vehicle-card:hover {
+  transform: translateY(-0.125rem);
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.15);
+}

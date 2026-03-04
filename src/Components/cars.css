@@ -22,6 +22,12 @@
 }
 
 /* Optional: styling for each Vehicle card */
+.vehicle-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+}
+
 .vehicle-card {
   background-color: #ffffff;
   padding: 0.75rem;
@@ -29,9 +35,57 @@
   border-radius: 0.5rem;
   border-left: 0.3125rem solid #4caf50;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
 }
 
 .vehicle-card:hover {
   transform: translateY(-0.125rem);
   box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.15);
+}
+
+/* Details Page Styles */
+.details-container {
+  max-width: 600px;
+  margin: 2rem auto;
+  padding: 2rem;
+}
+
+.back-btn {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 0.625rem 1.25rem;
+  border-radius: 0.5rem;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-bottom: 1.5rem;
+  transition: background-color 0.2s ease;
+}
+
+.back-btn:hover {
+  background-color: #45a049;
+}
+
+.details-card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 0.625rem;
+  box-shadow: 0 0.25rem 0.625rem rgba(0, 0, 0, 0.1);
+}
+
+.details-card h1 {
+  color: #333;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid #4caf50;
+  padding-bottom: 0.75rem;
+}
+
+.details-info p {
+  font-size: 1.125rem;
+  margin: 0.75rem 0;
+  color: #555;
+}
+
+.details-info strong {
+  color: #333;
 }

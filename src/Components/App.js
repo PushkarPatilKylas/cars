@@ -1,7 +1,10 @@
 import './cars.css'
 import { Routes, Route } from 'react-router-dom';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import Vehicle from "./Vehicle";
 import CarDetails from './details';
+import { setTotal } from '../store/carSlice';
 
 const App = () => {
   const allCars = [
@@ -10,6 +13,13 @@ const App = () => {
     { id: 3, name: "Honda Civic", year: 2018, price: 15000, color: "Blue", mileage: "80000 km", fuelType: "Petrol" },
     { id: 4, name: "Toyota Corolla", year: 2015, price: 10000, color: "Silver", mileage: "120000 km", fuelType: "Petrol" },
   ];
+
+  const dispatch = useDispatch();
+  const totalCars = useSelector((state) => state.cars.total);
+
+  useEffect(() => {
+    dispatch(setTotal(allCars.length));
+  }, [dispatch, allCars.length]);
 
   const newCars = allCars.filter(car => car.year >= 2024);
   const usedCars = allCars.filter(car => car.year < 2024);
@@ -24,6 +34,7 @@ const App = () => {
     <Routes>
       <Route path="/" element={
         <div className="car-list">
+          <div className="car-count">Total cars: {totalCars}</div>
           <div className="old-cars">
             <h2>Used</h2>
             {showCars(usedCars)}
